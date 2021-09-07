@@ -22,9 +22,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
-    - name: Run Bundler
-      run: bundle
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run rubocop
-      run: rubocop
+      run: bundle exec rubocop
     - name: Run tests
       run: bundle exec rspec spec/spec_human.rb
