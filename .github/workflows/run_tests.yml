@@ -22,6 +22,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
+    - name: Run Bundler
       run: bundle
     - name: Run rubocop
       run: rubocop
