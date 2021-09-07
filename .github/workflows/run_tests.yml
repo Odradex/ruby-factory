@@ -8,11 +8,7 @@
 
 name: Ruby
 
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+on: [push]
 
 jobs:
   test:
@@ -29,5 +25,7 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Run rubocop
+      run: rubocop
     - name: Run tests
       run: bundle exec rspec spec/spec_human.rb

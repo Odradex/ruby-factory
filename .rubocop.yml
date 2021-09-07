@@ -10,5 +10,8 @@
 # See https://docs.rubocop.org/rubocop/configuration
 Style/Documentation:
   Enabled: false
+Style/BlockComments:
+  Enabled: false
+
 AllCops: 
   NewCops: enable
